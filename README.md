@@ -19,7 +19,7 @@ the same camera settings and pre-process them to match the lighting.
 
 ## How to install (Linux)
 Just clone or download this repository and run the main script.
-You will also need opencv installed
+You will also need opencv installed.
 ```bash
 pip install opencv-python
 git clone https://github.com/fhorinek/BoxToolBox.git
@@ -27,10 +27,10 @@ cd BoxToolBox
 python BoxToolBox.py
 ```
 ## How to install (Windows)
-Just download and execute pre-built exe file.
+Just download and execute [pre-built exe file](https://github.com/fhorinek/BoxToolBox/raw/main/bin/BoxToolBox.exe)
 
 ## How to use it
-Here is a quick start video on youtube.
+Here is a quick start video on youtube
 
 [![BoxToolBox quick tutorial](http://img.youtube.com/vi/KH_hYwK7-UA/0.jpg)](http://www.youtube.com/watch?v=KH_hYwK7-UA)
 
