@@ -29,6 +29,8 @@ python BoxToolBox.py
 ## How to install (Windows)
 Just download and execute [pre-built exe file](https://github.com/fhorinek/BoxToolBox/raw/main/bin/BoxToolBox.exe)
 
+It will trigger Windows protection, you need to click on **more info** and **run anyway**
+
 ## How to use it
 Here is a quick start video on youtube
 
