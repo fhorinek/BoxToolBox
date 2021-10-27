@@ -56,8 +56,9 @@ You can use this window to compose the final image. Here you can change geometry
 
 ![layout](https://user-images.githubusercontent.com/9072684/139096747-427747e8-3880-4a9a-a025-ccdf9060ad49.png)
 
-**Controls:**
+If the settings window is not visible press `Ctrl-P`.
 
+**Controls:**
 * `Mouse wheel` - zoom
 * `Left button` - Pan
 * `Drag picture` - Swap images
