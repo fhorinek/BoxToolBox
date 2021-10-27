@@ -30,7 +30,9 @@ python BoxToolBox.py
 Just download and execute pre-built exe file.
 
 ## How to use it
-There is a quick start video on youtube.
+Here is a quick start video on youtube.
+
+[![BoxToolBox quick tutorial](http://img.youtube.com/vi/KH_hYwK7-UA/0.jpg)](http://www.youtube.com/watch?v=KH_hYwK7-UA)
 
 ### Perspective editor
 One window acts as input for defining box corners and the second window shows transformation previu. 
