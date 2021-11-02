@@ -36,6 +36,12 @@ Here is a quick start video on youtube
 
 [![BoxToolBox quick tutorial](http://img.youtube.com/vi/KH_hYwK7-UA/0.jpg)](http://www.youtube.com/watch?v=KH_hYwK7-UA)
 
+### Choosing source photos
+The application does not need to be installed. It is single executable file.
+
+Start the application and select the folder with the photos. 
+It is recommended to create the folder just for the photos you plan to use to assemble the collage.
+
 ### Perspective editor
 One window acts as input for defining box corners and the second window shows transformation previu. 
 Controls on the second window sets transformed image width and height. The resolution for the final picture will be
