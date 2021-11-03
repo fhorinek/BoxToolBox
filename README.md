@@ -41,6 +41,7 @@ The application does not need to be installed. It is single executable file.
 
 Start the application and select the folder with the photos. 
 It is recommended to create the folder just for the photos you plan to use to assemble the collage.
+This tool support *.jpg and *.png files.
 
 ### Perspective editor
 One window acts as input for defining box corners and the second window shows transformation previu. 
