@@ -19,7 +19,7 @@ the same camera settings and pre-process them to match the lighting.
 
 ## How to install (Linux)
 Just clone or download this repository and run the main script.
-You will also need opencv installed
+You will also need opencv installed.
 ```bash
 pip install opencv-python
 git clone https://github.com/fhorinek/BoxToolBox.git
@@ -27,12 +27,20 @@ cd BoxToolBox
 python BoxToolBox.py
 ```
 ## How to install (Windows)
-Just download and execute pre-built exe file.
+Just download and execute [pre-built exe file](https://github.com/fhorinek/BoxToolBox/raw/main/bin/BoxToolBox.exe)
+
+It will trigger Windows protection, you need to click on **more info** and **run anyway**
 
 ## How to use it
-Here is a quick start video on youtube.
+Here is a quick start video on youtube
 
 [![BoxToolBox quick tutorial](http://img.youtube.com/vi/KH_hYwK7-UA/0.jpg)](http://www.youtube.com/watch?v=KH_hYwK7-UA)
+
+### Choosing source photos
+The application does not need to be installed. It is single executable file.
+
+Start the application and select the folder with the photos. 
+It is recommended to create the folder just for the photos you plan to use to assemble the collage.
 
 ### Perspective editor
 One window acts as input for defining box corners and the second window shows transformation previu. 
