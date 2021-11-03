@@ -448,6 +448,7 @@ class BoxToolBox:
             
         if pb != None:
             common.close_progressbar(pb)
+            common.show_message("Info", "Rendering done!")
 
 
     def run(self):

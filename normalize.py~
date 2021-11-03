@@ -125,7 +125,7 @@ class Normalizator:
     def load_now(self):
         self.loaded = True
         img_path = os.path.join(self.path, self.image_name)
-        self.src_img = cv.imread(img_path, cv.IMREAD_UNCHANGED)
+        self.src_img = cv.imread(img_path)
         print(self.src_img.shape)
         self.src_h = self.src_img.shape[0]
         self.src_w = self.src_img.shape[1]
