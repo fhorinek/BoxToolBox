@@ -43,10 +43,10 @@ class Normalizator:
         self.check_cfg("height", 3000)
         self.check_cfg("margin", 500)
         self.check_cfg("prev_scale", 10)
+ 
         self.save_cfg_box()
         
         self.src_img = None
-                
         if not silent:
             self.create_windows()
 
@@ -58,17 +58,20 @@ class Normalizator:
     def on_width_track(self, val):
         self.props["width"] = val
         self.update_size()
-        self.draw_transformed(self.src_img.copy())
+        if not self.src_img is None:
+            self.draw_transformed(self.src_img.copy())
       
     def on_height_track(self, val):
         self.props["height"] = val
         self.update_size()
-        self.draw_transformed(self.src_img.copy())      
+        if not self.src_img is None:
+            self.draw_transformed(self.src_img.copy())      
         
     def on_margin_track(self, val):
         self.props["margin"] = val
         self.update_size()
-        self.draw_transformed(self.src_img.copy())        
+        if not self.src_img is None:
+            self.draw_transformed(self.src_img.copy())        
 
     def on_prev_track(self, val):
         self.props["prev_scale"] = val
@@ -85,20 +88,15 @@ class Normalizator:
         cv.resizeWindow(self.src_win, win_w, win_h)
         cv.resizeWindow(self.dst_win, win_w, win_h)
         
-        cv.createTrackbar("Width (px)", self.dst_win, 3000, 5000, self.on_width_track)
+        cv.createTrackbar("Width (px)", self.dst_win, self.props["width"], 5000, self.on_width_track)
         cv.setTrackbarMin("Width (px)", self.dst_win, 500)
-        cv.createTrackbar("Height (px)", self.dst_win, 3000, 5000, self.on_height_track)
+        cv.createTrackbar("Height (px)", self.dst_win, self.props["height"], 5000, self.on_height_track)
         cv.setTrackbarMin("Height (px)", self.dst_win, 500)        
-        cv.createTrackbar("Margin (px)", self.dst_win, 500, 2500, self.on_margin_track)
+        cv.createTrackbar("Margin (px)", self.dst_win, self.props["margin"], 2500, self.on_margin_track)
         cv.setTrackbarMin("Margin (px)", self.dst_win, 100)        
-
-        cv.createTrackbar("Preview scale (%)", self.dst_win, 10, 100, self.on_prev_track)
+        cv.createTrackbar("Preview scale (%)", self.dst_win, self.props["prev_scale"], 100, self.on_prev_track)
         cv.setTrackbarMin("Preview scale (%)", self.dst_win, 1)
 
-        cv.setTrackbarPos("Width (px)", self.dst_win, self.props["width"])
-        cv.setTrackbarPos("Height (px)", self.dst_win, self.props["height"])
-        cv.setTrackbarPos("Margin (px)", self.dst_win, self.props["margin"])
-        cv.setTrackbarPos("Preview scale (%)", self.dst_win, self.props["prev_scale"])                    
 
       
     def note_change(self):

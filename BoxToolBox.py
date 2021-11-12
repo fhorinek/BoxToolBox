@@ -60,8 +60,8 @@ class BoxToolBox:
         fname = os.path.join(self.path, slot, image_name)
         tmp = cv.imread(fname, cv.IMREAD_UNCHANGED)
 
-        img_w = int(w * self.scale)
-        img_h = int(h * self.scale)
+        img_w = int(w * (self.scale + self.margin_w * self.scale))
+        img_h = int(h * (self.scale + self.margin_h * self.scale))
         tmp = cv.resize(tmp, (img_w, img_h))
 
         if (final_proces == False or self.cfg[image_name]["crop"]) and not show_crop:
@@ -137,7 +137,7 @@ class BoxToolBox:
         cv.resizeWindow(self.main_win, win_w, win_h)
         cv.setMouseCallback(self.main_win, self.on_mouse_event)     
 
-        cv.createTrackbar("Space", "", 0, 100, self.on_space_track)
+        cv.createTrackbar("Space", "", 0, 200, self.on_space_track)
         cv.createTrackbar("Scale", "", 50, 200, self.on_scale_track)
         cv.setTrackbarMin("Scale", "", 25)
         cv.createTrackbar("Grid W", "", 1, 8, self.on_grid_w_track)
@@ -252,6 +252,7 @@ class BoxToolBox:
         
         if fast:
             slot = "fast" 
+            self.margin = int(self.cfg["box"]["margin"] * (self.cfg["box"]["prev_scale"] / 100.0))
             self.dst_w = int(self.cfg["box"]["width"] * (self.cfg["box"]["prev_scale"] / 100.0))
             self.dst_h = int(self.cfg["box"]["height"] * (self.cfg["box"]["prev_scale"] / 100.0))
             
@@ -259,11 +260,14 @@ class BoxToolBox:
             
         else:
             slot = "full"
+            self.margin = self.cfg["box"]["margin"]
             self.dst_w = self.cfg["box"]["width"]
             self.dst_h = self.cfg["box"]["height"]
             
             pb = common.create_progressbar()   
 
+        self.margin_w = (self.margin * 2) / self.dst_w
+        self.margin_h = (self.margin * 2) / self.dst_h
 
         self.grid_w = self.props["grid_w"]
         self.grid_h = self.props["grid_h"]
